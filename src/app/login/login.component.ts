@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.afAuth.signInWithEmailAndPassword(this.form.get('email').value, this.form.get('password').value)
       .then(() => {
-        return firebase.auth().currentUser.getIdToken();
+        return firebase.auth().currentUser.getIdToken(true);
       })
       .then((token) => {
         localStorage.setItem('token', `${token}`);
