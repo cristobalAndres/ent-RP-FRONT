@@ -1,4 +1,9 @@
-<nav *ngIf="sessionToken" class="navbar navbar-light bg-light">
-  <span class="navbar-brand mb-0 h1">Navbar</span>
-  <button (click)="logout()">logout</button>
+<nav *ngIf="sessionToken" class="navbar navbar-dark bg-dark">
+  <span class="navbar-brand mb-0 h1">
+    <a routerLink="/list" class="ml-3" routerLinkActive="active">
+      <img style="vertical-align:middle" class="svg-icon svg-icon-ripley_com"
+        src="https://static.ripley.cl/images/quedateencasa.png" alt="Ripley.com" height="45" width="45">
+    </a>
+  </span>
+  <a (click)="logout()" class="pointer color-white mr-3"> <i class="fa fa-power-off fa-3x"></i></a>
 </nav>
