@@ -11,6 +11,8 @@ export class DetailComponent implements OnInit {
   id = null;
   product = null;
   interval: any;
+  public isCollapsed = true;
+  public isCollapsed1 = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,7 +28,6 @@ export class DetailComponent implements OnInit {
   getProductId(id) {
     this.productsService.getProductId(id).subscribe(
       data => {
-        console.log(data);
         this.product = data;
       },
       err => {

@@ -1,7 +1,7 @@
 .topright {
   position: absolute;
   top: 8px;
-  right: 16px;
+  right: 26px;
   font-size: 16px;
   color: white;
   background: #e75353;
@@ -59,4 +59,76 @@ figure {
 .shadow-effects:hover{
   transition: box-shadow .6s;
   box-shadow: 5px 10px 13px rgb(192, 192, 192);
+}
+
+
+.product-price-discount .product-discount-tag {
+  position: relative;
+  float: right;
+  top: 0;
+}
+
+.product-discount-tag {
+  position: absolute;
+  text-align: center;
+  background: #e75353;
+  top: 5px;
+  right: 5px;
+  margin: 0;
+  padding: 5px 5px 4px 0;
+  color: #fff;
+  font-size: 14px;
+  min-width: 40px;
+  z-index: 2;
+  margin-right: 10px;
+}
+
+.product-discount-tag:after {
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(231,83,83,0);
+  border-right-color: #e75353;
+  border-width: 15px;
+  margin-top: -15px;
+}
+
+.price-text {
+  font-weight: 500;
+  color: #6a6a6a;
+  font-size: 14px;
+}
+
+.text-ripleypuntos {
+  font-weight: 500;
+  color: #70578b;
+  font-size: 14px;
+}
+
+.collapsable {
+  padding: 20px;
+  font-weight: 600;
+  padding-left: 20px;
+  color: #6a6a6a;
+  background: #f0f0f0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  text-transform: uppercase;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: #6a6a6a;
+}
+
+ul > li:nth-of-type(odd) {
+  background-color: #f9f9f9 ;
 }
