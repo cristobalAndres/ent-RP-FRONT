@@ -31,7 +31,7 @@ export class DetailComponent implements OnInit {
         this.product = data;
       },
       err => {
-        console.log('ERRRRR');
+        console.log('err');
       });
   }
 

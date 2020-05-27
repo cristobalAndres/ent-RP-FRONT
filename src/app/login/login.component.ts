@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavService } from '../services/nav.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,13 +16,12 @@ export class LoginComponent implements OnInit {
   public edited = false;
 
   constructor(
-    private afAuth: AngularFireAuth,
     private router: Router,
     private fb: FormBuilder,
-    private navService: NavService
+    private navService: NavService,
+    private authService: AuthService
   ) { }
   ngOnInit(): void {
-    console.log(localStorage.getItem('token'));
     this.createForm();
   }
 
@@ -40,9 +40,9 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.loading = true;
-    this.afAuth.auth.signInWithEmailAndPassword(this.form.get('email').value, this.form.get('password').value)
+    this.authService.login(this.form.get('email').value, this.form.get('password').value)
       .then(() => {
-        return this.afAuth.auth.currentUser.getIdToken(true);
+        return this.authService.getIdToken();
       })
       .then((token) => {
         localStorage.setItem('token', `${token}`);
@@ -53,9 +53,8 @@ export class LoginComponent implements OnInit {
       .catch(err => {
         this.loading = false;
         this.edited = true;
-        setTimeout(function () {
+        setTimeout(function() {
           this.edited = false;
-          console.log(this.edited);
         }.bind(this), 5000);
       });
   }
