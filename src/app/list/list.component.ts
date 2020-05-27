@@ -26,6 +26,7 @@ export class ListComponent implements OnInit {
         this.products = data;
       },
       error => {
+        this.refresh();
         console.log(error);
       });
   }
@@ -56,5 +57,9 @@ export class ListComponent implements OnInit {
       }
     });
   }
+
+  refresh(): void {
+    window.location.reload();
+}
 
 }

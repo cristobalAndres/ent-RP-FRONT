@@ -1,0 +1,14 @@
+.logo {
+  display: block;
+  margin: auto;
+}
+
+.background-black {
+  background: black;
+  border-radius: 20px;
+}
+
+.button-ripley {
+  background: #70578b;
+  color: white
+}

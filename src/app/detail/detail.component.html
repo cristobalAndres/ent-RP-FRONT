@@ -1,94 +1,123 @@
-<div *ngIf="product" class="row col-lg-8 col-sm-10 mx-auto mb-5">
-  <div class="col-12">
-    <div class="row" (mouseover)="overImages()" (mouseout)="focuslost()">
-      <div class="col-lg-5 col-sm-12">
-        <figure class="figure">
-          <img [src]="product.fullImage" class="img-thumbnail" alt="Image">
-          <div *ngIf="product.prices.discountPercentage !== 0" class="topright">-{{product.prices.discountPercentage}}%
-          </div>
-        </figure>
-      </div>
-      <div class="col">
-        <div class="col-12 product-title font-weight-bold">{{product.attributes[0].value}} </div>
-        <div class="col-12 name-product">{{product.name}}</div>
-        <div class="col-12 name-product">SKU: {{product.partNumber}}</div>
-        <div class="col-12 short-description">{{product.shortDescription}}</div>
-        <div class="col-12">
-          <div class="row">
-            <div class="col-6 price-text">Normal</div>
-            <div class="col-6 price-formattedListPrice text-right">{{product.prices.formattedListPrice}}</div>
-          </div>
+<div class="container">
+  <div *ngIf="!product" class="alert mt-2 text-center border mt-5" role="alert">
+    <div class="spinner-grow text-primary" role="status">
+      <span class="sr-only"></span>
+    </div>
+    <div class="spinner-grow text-secondary" role="status">
+      <span class="sr-only"></span>
+    </div>
+    <div class="spinner-grow text-success" role="status">
+      <span class="sr-only"></span>
+    </div>
+    <div class="spinner-grow text-danger" role="status">
+      <span class="sr-only"></span>
+    </div>
+    <div class="spinner-grow text-warning" role="status">
+      <span class="sr-only"></span>
+    </div>
+    <div class="spinner-grow text-info" role="status">
+      <span class="sr-only"></span>
+    </div>
+    <div class="spinner-grow text-light" role="status">
+      <span class="sr-only"></span>
+    </div>
+    <div class="spinner-grow text-dark" role="status">
+      <span class="sr-only"></span>
+    </div>
+  </div>
+  <div *ngIf="product" class="row col-12 mx-auto mb-5">
+    <div class="col-12">
+      <div class="row" (mouseover)="overImages()" (mouseout)="focuslost()">
+        <div class="col-lg-5 col-sm-12">
+          <figure class="figure">
+            <img [src]="product.fullImage" class="img-thumbnail" alt="Image">
+            <div *ngIf="product.prices.discountPercentage !== 0" class="topright">
+              -{{product.prices.discountPercentage}}%
+            </div>
+          </figure>
         </div>
-        <div class="col-12 price-formattedOfferPrice">
-          <div class="row">
-            <div class="col-6">Internet</div>
-            <div class="col-6 text-right">{{product.prices.formattedOfferPrice}}</div>
-          </div>
-        </div>
-        <div class="col-12 price-formattedCardPrice">
-          <div class="row">
-            <div class="col-6">Tarjeta Ripley</div>
-            <div class="col-6 text-right">{{product.prices.formattedCardPrice}}</div>
-          </div>
-        </div>
-        <div class="col-12" *ngIf="product.prices.discountPercentage !== 0">
-          <div class="row mb-2">
-            <div class="col-6 price-text mt-1">Descuento</div>
-            <div class="col-6">
-              <span class="product-discount-tag">
-                <span class="discount-percentage">
-                  -{{product.prices.discountPercentage}}%
-                </span>
-              </span>
+        <div class="col">
+          <div class="col-12 product-title font-weight-bold">{{product.attributes[0].value}} </div>
+          <div class="col-12 name-product">{{product.name}}</div>
+          <div class="col-12 name-product">SKU: {{product.partNumber}}</div>
+          <div class="col-12 short-description">{{product.shortDescription}}</div>
+          <div class="col-12">
+            <div class="row">
+              <div class="col-6 price-text">Normal</div>
+              <div class="col-6 price-formattedListPrice text-right">{{product.prices.formattedListPrice}}</div>
             </div>
           </div>
-        </div>
-        <div class="col-12 price-formattedCardPrice">
-          <div class="row text-ripleypuntos">
-            <div class="col-6">Acumulas</div>
-            <div class="col-6 text-right">{{product.prices.ripleyPuntos}} RipleyPuntos GO</div>
+          <div class="col-12 price-formattedOfferPrice">
+            <div class="row">
+              <div class="col-6">Internet</div>
+              <div class="col-6 text-right">{{product.prices.formattedOfferPrice}}</div>
+            </div>
+          </div>
+          <div class="col-12 price-formattedCardPrice">
+            <div class="row">
+              <div class="col-6">Tarjeta Ripley</div>
+              <div class="col-6 text-right">{{product.prices.formattedCardPrice}}</div>
+            </div>
+          </div>
+          <div class="col-12" *ngIf="product.prices.discountPercentage !== 0">
+            <div class="row mb-2">
+              <div class="col-6 price-text mt-1">Descuento</div>
+              <div class="col-6">
+                <span class="product-discount-tag">
+                  <span class="discount-percentage">
+                    -{{product.prices.discountPercentage}}%
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 price-formattedCardPrice">
+            <div class="row text-ripleypuntos">
+              <div class="col-6">Acumulas</div>
+              <div class="col-6 text-right">{{product.prices.ripleyPuntos}} RipleyPuntos GO</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="col-12">
-    <div class="container">
-      <div class="col collapsable" (click)="isCollapsed = !isCollapsed">
-        <div class="col-6">
-          <i class="mt-1 mr-4 fa" [ngClass]="{'fa-plus': isCollapsed, 'fa-minus': !isCollapsed }">
-          </i>
-          <span>Descripción</span>
+    <div class="col-12">
+      <div class="container">
+        <div class="col collapsable border" (click)="isCollapsed = !isCollapsed">
+          <div class="col-6">
+            <i class="mt-1 mr-4 fa" [ngClass]="{'fa-plus': isCollapsed, 'fa-minus': !isCollapsed }">
+            </i>
+            <span>Descripción</span>
+          </div>
+          <div *ngIf="isCollapsed" class="col-6 text-right">VER MÁS</div>
+          <div *ngIf="!isCollapsed" class="col-6 text-right">VER MENOS</div>
         </div>
-        <div *ngIf="isCollapsed" class="col-6 text-right">VER MÁS</div>
-        <div *ngIf="!isCollapsed" class="col-6 text-right">VER MENOS</div>
-      </div>
-      <div id="collapseExample" [ngbCollapse]="isCollapsed" [attr.aria-expanded]="!isCollapsed"
-        aria-controls="collapseExample" style="max-height: 4990px;">
-        <div class="">
-          <div class="mx-auto" style="width: 100%;" [innerHTML]="product.longDescription"></div>
+        <div id="collapseExample" [ngbCollapse]="isCollapsed" [attr.aria-expanded]="!isCollapsed"
+          aria-controls="collapseExample" style="max-height: 4990px;">
+          <div class="">
+            <div class="mx-auto" style="width: 100%;" [innerHTML]="product.longDescription"></div>
+          </div>
         </div>
-      </div>
-      <div class="col collapsable" (click)="isCollapsed1 = !isCollapsed1">
-        <div class="col-6">
-          <i class="mt-1 mr-4 fa" [ngClass]="{'fa-plus': isCollapsed1, 'fa-minus': !isCollapsed1 }">
-          </i>
-          <span>Descripción</span>
+        <div class="col collapsable border" (click)="isCollapsed1 = !isCollapsed1">
+          <div class="col-6">
+            <i class="mt-1 mr-4 fa" [ngClass]="{'fa-plus': isCollapsed1, 'fa-minus': !isCollapsed1 }">
+            </i>
+            <span>Descripción</span>
+          </div>
+          <div *ngIf="isCollapsed1" class="col-6 text-right">VER MÁS</div>
+          <div *ngIf="!isCollapsed1" class="col-6 text-right">VER MENOS</div>
         </div>
-        <div *ngIf="isCollapsed1" class="col-6 text-right">VER MÁS</div>
-        <div *ngIf="!isCollapsed1" class="col-6 text-right">VER MENOS</div>
-      </div>
-      <div id="collapseExample1" [ngbCollapse]="isCollapsed1" [attr.aria-expanded]="!isCollapsed1"
-        aria-controls="collapseExample1" style="max-height: 4990px;">
-        <div class="">
-          <ul class="list-group mx-auto">
-            <li class="list-group-item" *ngFor="let attributes of product.attributes;let i=index">
-              <div class="row">
-                <div class="col-6">{{attributes.name}}</div>
-                <div class="col-6">{{attributes.value}}</div>
-              </div>
-            </li>
-          </ul>
+        <div id="collapseExample1" [ngbCollapse]="isCollapsed1" [attr.aria-expanded]="!isCollapsed1"
+          aria-controls="collapseExample1" style="max-height: 4990px;">
+          <div class="">
+            <ul class="list-group mx-auto">
+              <li class="list-group-item" *ngFor="let attributes of product.attributes;let i=index">
+                <div class="row">
+                  <div class="col-6">{{attributes.name}}</div>
+                  <div class="col-6">{{attributes.value}}</div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
