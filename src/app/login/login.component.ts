@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
         return firebase.auth().currentUser.getIdToken();
       })
       .then((token) => {
-        console.log('TOKEN --->>>', token);
         localStorage.setItem('token', `${token}`);
         this.navService.serviceNav();
         this.router.navigateByUrl('/list');
