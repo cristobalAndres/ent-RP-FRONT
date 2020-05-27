@@ -13,6 +13,8 @@ import { NavService } from './services/nav.service';
 import { ProductsService } from './services/products.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DetailComponent } from './detail/detail.component';
+import { AngularFireAuthGuard, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
+
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCKZLi67SMcEvqlPjEquPI5vhFp0ZZjYJY',
@@ -42,7 +44,7 @@ const firebaseConfig = {
     AngularFireAuthModule,
     NgbModule
   ],
-  providers: [ AngularFireAuth, NavService, ProductsService ],
+  providers: [ AngularFireAuth, NavService, ProductsService, AngularFireAuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

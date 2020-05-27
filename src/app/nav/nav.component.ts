@@ -28,7 +28,7 @@ export class NavComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('token');
-    this.afAuth.signOut().then(() => {
+    this.afAuth.auth.signOut().then(() => {
       this.navService.serviceNav();
       this.router.navigateByUrl('');
     })
