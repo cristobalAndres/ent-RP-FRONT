@@ -23,4 +23,5 @@ export class NavService {
       this.navChange.next(false);
     }
   }
+
 }

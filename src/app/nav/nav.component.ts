@@ -10,11 +10,14 @@ import { NavService } from '../services/nav.service';
 })
 export class NavComponent implements OnInit {
   sessionToken = false;
+  tokenStorage = localStorage.getItem('token');
+
   constructor(
     private afAuth: AngularFireAuth,
     private router: Router,
     private navService: NavService
   ) {
+    this.sessionToken = localStorage.getItem('token') ? true : false;
     this.navService.navChange.subscribe(value => {
       this.sessionToken = value;
     });

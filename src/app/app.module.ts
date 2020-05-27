@@ -6,9 +6,11 @@ import { LoginComponent } from './login/login.component';
 import { ListComponent } from './list/list.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
+import { HttpClientModule } from "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavComponent } from './nav/nav.component';
 import { NavService } from './services/nav.service';
+import { ProductsService } from './services/products.service';
 import { ReactiveFormsModule } from '@angular/forms';
 
 const firebaseConfig = {
@@ -33,11 +35,12 @@ const firebaseConfig = {
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     NgbModule
   ],
-  providers: [ AngularFireAuth, NavService ],
+  providers: [ AngularFireAuth, NavService, ProductsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

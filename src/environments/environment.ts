@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url_products: ''
+  url_products: 'https://back-rp.herokuapp.com'
 };
 
 /*

@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NavService } from '../services/nav.service';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,7 @@ export class LoginComponent implements OnInit {
     private afAuth: AngularFireAuth,
     private router: Router,
     private fb: FormBuilder,
+    private navService: NavService
   ) { }
   ngOnInit(): void {
     this.createForm();
@@ -39,6 +41,7 @@ export class LoginComponent implements OnInit {
       .then((token) => {
         console.log('TOKEN --->>>', token);
         localStorage.setItem('token', `${token}`);
+        this.navService.serviceNav();
         this.router.navigateByUrl('/list');
       })
       .catch(err => {
