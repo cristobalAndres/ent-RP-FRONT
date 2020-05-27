@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Observable} from 'rxjs';
 import { environment } from '../../environments/environment';
 
 let headers = new HttpHeaders();
@@ -12,7 +13,7 @@ export class ProductsService {
     headers = headers.set('token', localStorage.getItem('token'));
    }
 
-  getProducts() {
+  getProducts(): Observable<any> {
     return this.http.get(`${this.url}/products`, { headers });
   }
   getProductId(id: string) {

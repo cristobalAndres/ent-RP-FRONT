@@ -1,0 +1,62 @@
+.topright {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 16px;
+  color: white;
+  background: #e75353;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.product-title {
+  margin: 6px auto;
+  color: #000;
+  font-size: 12px;
+}
+
+.name-product {
+  width: 100%;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  line-height: 16px;
+  font-size: 12px;
+  max-height: 30px;
+}
+
+.short-description {
+  font-family: Montserrat,Helvetica,Arial,sans-serif;
+  line-height: 1.5;
+  color: #6a6a6a;
+  font-size: 14px;
+}
+
+.price-formattedListPrice {
+  text-decoration: line-through;
+  font-weight: 500;
+  font-size: 12px;
+  color: #6a6a6a;
+}
+
+.price-formattedOfferPrice {
+  font-weight: 500;
+  color: #6a6a6a;
+  font-size: 14px;
+}
+
+.price-formattedCardPrice {
+  font-size: 16px;
+  color: #e75353;
+  font-weight: 600;
+}
+
+figure {
+  margin: 10px !important;
+}
+
+.shadow-effects:hover{
+  transition: box-shadow .6s;
+  box-shadow: 5px 10px 13px rgb(192, 192, 192);
+}

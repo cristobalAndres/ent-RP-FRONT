@@ -1,1 +1,20 @@
-<p>list works!</p>
+<div class="row col-11 mx-auto" >
+  <div  *ngFor="let product of products;let i=index" class="col-lg-6 col-sm-12 shadow-effects">
+    <div class="row" (mouseover)="overImages(i)" (mouseout)="focuslost()">
+      <div class="col-lg-4 col-sm-12">
+        <figure class="figure">
+          <img [src]="product.fullImage" class="img-thumbnail" alt="Image">
+          <div class="topright">-{{product.prices.discountPercentage}}%</div>
+        </figure>
+      </div>
+      <div class="col">
+          <div class="col-12 product-title font-weight-bold">{{product.attributes[0].value}}</div>
+          <div class="col-12 name-product">{{product.name}}</div>
+          <div class="col-12 short-description">{{product.shortDescription}}</div>
+          <div class="col-12 price-formattedListPrice">{{product.prices.formattedListPrice}}</div>
+          <div class="col-12 price-formattedOfferPrice">{{product.prices.formattedOfferPrice}}</div>
+          <div class="col-12 price-formattedCardPrice">{{product.prices.formattedCardPrice}}</div>
+      </div>
+    </div>
+  </div>
+</div>
