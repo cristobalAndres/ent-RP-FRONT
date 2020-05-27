@@ -1,0 +1,17 @@
+
+<div class="card col-lg-6 cl-sm-11 mx-auto">
+  <div class="card-body">
+    <form [formGroup]="form">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" formControlName="email" id="email" aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" formControlName="password" id="password">
+      </div>
+      <button type="button" [disabled]="form.invalid" (click)="login()" class="btn btn-primary col">Submit</button>
+    </form>
+  </div>
+</div>

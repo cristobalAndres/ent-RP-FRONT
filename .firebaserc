@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "auth-3b4ef": {
+      "hosting": {
+        "ent-RP-FRONT": [
+          "auth-3b4ef"
+        ]
+      }
+    }
+  }
+}

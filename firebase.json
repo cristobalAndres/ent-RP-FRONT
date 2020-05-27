@@ -1,0 +1,34 @@
+{
+  "hosting": [
+    {
+      "target": "ent-RP-FRONT",
+      "public": "dist/ent-RP-FRONT",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "ent-RP-FRONT",
+      "public": "dist/ent-RP-FRONT",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
