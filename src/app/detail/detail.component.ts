@@ -26,6 +26,7 @@ export class DetailComponent implements OnInit {
   getProductId(id) {
     this.productsService.getProductId(id).subscribe(
       data => {
+        console.log(data);
         this.product = data;
       },
       err => {

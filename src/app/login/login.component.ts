@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
     private navService: NavService
   ) { }
   ngOnInit(): void {
+    console.log('-------', localStorage.getItem('token'));
     this.createForm();
   }
 
